@@ -1,5 +1,6 @@
 import "./main.css";
 import reactLogo from "./assets/react.svg";
+import Accordion from "./nero-ui/accordion/accordion.jsx";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       <h1>Nero-UI is done with Deno + Vite + React</h1>
       <div className="testbed">
         <div className="testbed-item">
-          <h1>NeroUI</h1>
+          <Accordion />
         </div>
         <div className="testbed-item">
           <h1>NeroUI</h1>

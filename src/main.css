@@ -32,6 +32,11 @@
   }
 }
 
+/*
+ * ---------------------------------------------------------------------------------
+ * -- Testbed items
+*/
+
 .testbed {
   display: flex;
   flex-direction: row;
@@ -46,4 +51,38 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-grow: 1;
+}
+
+/*
+ * ---------------------------------------------------------------------------------
+ * -- Accordion items
+*/
+
+.accordion-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  background-color: aqua;
+  border-radius: 30px;
+  flex-grow: 1;
+}
+
+.accordion-title {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  align-content: start;
+  flex-grow: 2;
+  padding-left: 2rem;
+}
+
+.accordion-arrow {
+  cursor: pointer;
+  font-size: large;
+  font-weight: bolder;
+  align-content: flex-end;
+  transform-origin: center center;
+  margin-right: 1rem;
 }
