@@ -17,7 +17,9 @@ function App() {
       <h1>Nero-UI is done with Deno + Vite + React</h1>
       <div className="testbed">
         <div className="testbed-item">
-          <Accordion />
+          <Accordion>
+            <p>Hello World</p>
+          </Accordion>
         </div>
         <div className="testbed-item">
           <h1>NeroUI</h1>

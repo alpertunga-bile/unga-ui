@@ -59,6 +59,13 @@
  * -- Accordion items
 */
 
+.accordion-root {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+}
+
 .accordion-div {
   display: flex;
   flex-direction: row;
@@ -85,4 +92,8 @@
   align-content: flex-end;
   transform-origin: center center;
   margin-right: 1rem;
+}
+
+.accordion-item {
+  opacity: 0;
 }

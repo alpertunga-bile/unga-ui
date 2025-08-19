@@ -1,7 +1,7 @@
 import { animate, createScope } from "animejs";
 import { useEffect, useRef, useState } from "react";
 
-export default function Accordion() {
+export default function Accordion({children}) {
   const root = useRef(null);
   const scope = useRef(null);
 
@@ -14,15 +14,31 @@ export default function Accordion() {
           rotate: {
             to: "90deg",
             ease: "inOutQuad",
-            duration: 500,
+            duration: 300,
           }
         });
+
+        animate(".accordion-item", {
+          opacity: {
+            to: 1,
+            ease: "linear",
+            duration: 500,
+          }
+        })
       });
 
       self.add("accordionClose", () => {
         animate(".accordion-arrow", {
           rotate: {
             to: "0deg",
+            ease: "inOut",
+            duration: 300,
+          }
+        });
+
+        animate(".accordion-item", {
+          opacity: {
+            to: 0,
             ease: "inOutQuad",
             duration: 500,
           }
@@ -34,8 +50,6 @@ export default function Accordion() {
   }, []);
 
   const handle_click = () => {
-    console.log("is clicked")
-
     if(!isOpened) {
       scope.current.methods.accordionReveal();
     } else {
@@ -46,11 +60,14 @@ export default function Accordion() {
   }
 
   return (
-    <>
-      <div className="accordion-div" ref={root} onClick={handle_click}>
+    <div className="accordion-root" ref={root}>
+      <div className="accordion-div" onClick={handle_click}>
         <p className="accordion-title">Accordion</p>
         <p className="accordion-arrow">{">"}</p>
       </div>
-    </>
+      <div className="accordion-item">
+        {children}
+      </div>
+    </div>
   );
 }
