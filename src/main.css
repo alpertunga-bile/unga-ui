@@ -32,6 +32,10 @@
   }
 }
 
+:root {
+  --nero-accordion-border-color: #9B598E;
+}
+
 /*
  * ---------------------------------------------------------------------------------
  * -- Testbed items
@@ -67,11 +71,14 @@
 }
 
 .accordion-div {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: baseline;
-  background-color: aqua;
+  border: solid;
+  border-radius: 1rem;
+  border-color: var(--nero-accordion-border-color);
   border-radius: 30px;
   flex-grow: 1;
 }
@@ -85,6 +92,10 @@
   padding-left: 2rem;
 }
 
+.accordion-title::selection {
+  background-color: transparent;
+}
+
 .accordion-arrow {
   cursor: pointer;
   font-size: large;
@@ -94,6 +105,11 @@
   margin-right: 1rem;
 }
 
+.accordion-arrow::selection {
+  background-color: transparent;
+}
+
 .accordion-item {
   opacity: 0;
+  max-height: 0;
 }
