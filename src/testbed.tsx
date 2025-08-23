@@ -1,6 +1,7 @@
 import "./main.css";
 import reactLogo from "./assets/react.svg";
 import Accordion from "./nero-ui/accordion/accordion.jsx";
+import { Dropdown } from "./nero-ui/dropdown/dropdown.jsx";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
           </Accordion>
         </div>
         <div className="testbed-item">
-          <h1>NeroUI</h1>
+          <Dropdown options={["Option 1", "Option 2"]} />
         </div>
         <div className="testbed-item">
           <h1>NeroUI</h1>

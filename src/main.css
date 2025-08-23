@@ -33,7 +33,11 @@
 }
 
 :root {
-  --nero-accordion-border-color: #9B598E;
+  --nero-rounded-border: 30px;
+  --nero-half-rounded-border: 15px;
+  --nero-border-color: #9B598E;
+  --nero-hover-color: #9b387d;
+  --nero-focus-color: #9b1874;
 }
 
 /*
@@ -78,8 +82,8 @@
   align-items: baseline;
   border: solid;
   border-radius: 1rem;
-  border-color: var(--nero-accordion-border-color);
-  border-radius: 30px;
+  border-color: var(--nero-border-color);
+  border-radius: var(--nero-rounded-border);
   flex-grow: 1;
 }
 
@@ -112,4 +116,86 @@
 .accordion-item {
   opacity: 0;
   max-height: 0;
+}
+
+/*
+ * ---------------------------------------------------------------------------------
+ * -- Dropdown items
+*/
+
+.dropdown-root {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+}
+
+
+.dropdown-input {
+  display: none;
+}
+
+.dropdown-trigger {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  border: solid;
+  border-radius: 1rem;
+  border-color: var(--nero-border-color);
+  border-radius: var(--nero-half-rounded-border);
+  flex-grow: 1;
+}
+
+.dropdown-trigger-title {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  align-content: start;
+  flex-grow: 2;
+  padding-left: 2rem;
+}
+
+.dropdown-trigger-title::selection {
+  background-color: transparent;
+}
+
+.dropdown-trigger-arrow {
+  cursor: pointer;
+  font-size: large;
+  font-weight: bolder;
+  align-content: flex-end;
+  transform-origin: center center;
+  margin-right: 1rem;
+  rotate: 180deg;
+}
+
+.dropdown-trigger-arrow::selection {
+  background-color: transparent;
+}
+
+.dropdown-items {
+  z-index: 9999999;
+  overflow-y: auto;
+  height: auto;
+  width: auto;
+  max-height: 0px;
+  margin: 4px;
+  list-style-type: none;
+}
+
+.dropdown-item {
+  position: relative;
+  padding: 12px 4px;
+  background-color: transparent;
+  border-radius: var(--nero-half-rounded-border);
+}
+
+.dropdown-item:hover {
+  background-color: var(--nero-hover-color);
+}
+
+.dropdown-item:focus {
+  background-color: var(--nero-focus-color);
 }
