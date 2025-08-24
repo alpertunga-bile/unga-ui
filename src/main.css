@@ -35,7 +35,7 @@
 :root {
   --nero-rounded-border: 30px;
   --nero-half-rounded-border: 15px;
-  --nero-border-color: #9B598E;
+  --nero-border-color: #9b598e;
   --nero-hover-color: #9b387d;
   --nero-focus-color: #9b1874;
 }
@@ -43,7 +43,7 @@
 /*
  * ---------------------------------------------------------------------------------
  * -- Testbed items
-*/
+ */
 
 .testbed {
   display: flex;
@@ -65,7 +65,7 @@
 /*
  * ---------------------------------------------------------------------------------
  * -- Accordion items
-*/
+ */
 
 .accordion-root {
   display: flex;
@@ -121,7 +121,7 @@
 /*
  * ---------------------------------------------------------------------------------
  * -- Dropdown items
-*/
+ */
 
 .dropdown-root {
   display: flex;
@@ -129,7 +129,6 @@
   flex-wrap: nowrap;
   flex-grow: 1;
 }
-
 
 .dropdown-input {
   display: none;
@@ -197,5 +196,55 @@
 }
 
 .dropdown-item:focus {
+  background-color: var(--nero-focus-color);
+}
+
+/*
+ * ---------------------------------------------------------------------------------
+ * -- AutoComplete items
+ */
+
+.autocomplete-root {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+}
+
+.autocomplete-trigger {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: solid;
+  border-radius: 1rem;
+  border-color: var(--nero-border-color);
+  border-radius: var(--nero-half-rounded-border);
+  flex-grow: 1;
+  padding: 1rem 1rem;
+}
+
+.autocomplete-items {
+  z-index: 9999999;
+  overflow-y: auto;
+  height: auto;
+  width: auto;
+  max-height: 1080px;
+  margin: 4px;
+  list-style-type: none;
+}
+
+.autocomplete-item {
+  position: relative;
+  padding: 12px 4px;
+  background-color: transparent;
+  border-radius: var(--nero-half-rounded-border);
+}
+
+.autocomplete-item:hover {
+  background-color: var(--nero-hover-color);
+}
+
+.autocomplete-item:focus {
   background-color: var(--nero-focus-color);
 }
