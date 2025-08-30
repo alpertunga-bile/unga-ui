@@ -55,8 +55,6 @@
 }
 
 .testbed-item {
-  width: 24rem;
-  height: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -283,6 +281,11 @@
   background-color: transparent;
   padding: 0.5rem 1rem;
 }
+
+/*
+ * ---------------------------------------------------------------------------------
+ * -- Tag Selection items
+ */
 
 .tag-selection-trigger {
   position: relative;
