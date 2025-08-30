@@ -77,7 +77,7 @@ export function Dropdown(
         });
       });
     });
-  }, [options]);
+  }, []);
 
   return (
     <div className="collapse-root" ref={root}>
