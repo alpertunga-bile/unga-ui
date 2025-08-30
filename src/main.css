@@ -50,7 +50,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: start;
+  align-items: flex-start;
   gap: 1rem 2rem;
 }
 
@@ -100,13 +100,6 @@
  * -- Accordion items
  */
 
-.accordion-root {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  flex-grow: 1;
-}
-
 .accordion-div {
   position: relative;
   display: flex;
@@ -155,13 +148,6 @@
  * ---------------------------------------------------------------------------------
  * -- Dropdown items
  */
-
-.dropdown-root {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  flex-grow: 1;
-}
 
 .dropdown-trigger {
   position: relative;
@@ -238,13 +224,6 @@
  * -- AutoComplete items
  */
 
-.autocomplete-root {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  flex-grow: 1;
-}
-
 .autocomplete-trigger {
   position: relative;
   display: flex;
@@ -295,7 +274,6 @@
 
 .chip {
   display: flex;
-  flex-grow: 1;
   justify-content: center;
   align-items: center;
   color: var(--unga-text-color);
@@ -303,4 +281,40 @@
   border-color: var(--unga-border-color);
   border-radius: var(--unga-rounded-border);
   background-color: transparent;
+  padding: 0.5rem 1rem;
+}
+
+.tag-selection-trigger {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: solid;
+  border-radius: 1rem;
+  border-color: var(--unga-border-color);
+  border-radius: var(--unga-half-rounded-border);
+  flex-grow: 1;
+  padding: 1rem 1rem;
+}
+
+.tag-selection-trigger:focus {
+  outline: none;
+  border-color: var(--unga-focus-color);
+}
+
+.tag-selection-items {
+  z-index: 9999999;
+  overflow-y: auto;
+  height: auto;
+  width: auto;
+  max-height: 1080px;
+  margin: 4px;
+  list-style-type: none;
+}
+
+.tag-selection-tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }

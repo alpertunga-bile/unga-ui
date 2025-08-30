@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/alpertunga-bile/unga-ui/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/alpertunga-bile/unga-ui/actions/workflows/ci.yml)
 
+Creating UI components from scratch
+
 ## Running
 
 You need to have Deno v2.0.0 or later installed to run this repo.
