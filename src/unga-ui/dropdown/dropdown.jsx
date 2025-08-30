@@ -4,10 +4,10 @@ import { animate, createScope } from "animejs";
 function DropdownItem({ name = "Option", key = "dropdown", onClick }) {
   return (
     <li
-      className="dropdown-item"
+      className="collapse-item"
       onClick={onClick}
       tabIndex={0}
-      key={`tag_${key}_${name}`}
+      key={`tagdrop_${key}_${name}`}
     >
       {name}
     </li>
@@ -80,7 +80,7 @@ export function Dropdown(
   }, [options]);
 
   return (
-    <div className="dropdown-root" ref={root}>
+    <div className="collapse-root" ref={root}>
       <input
         className="hidden-input"
         type="text"

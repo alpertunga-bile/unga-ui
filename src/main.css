@@ -72,6 +72,29 @@
   display: none;
 }
 
+.collapse-root {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+}
+
+.collapse-item {
+  position: relative;
+  padding: 12px 4px;
+  background-color: transparent;
+  border-radius: var(--unga-half-rounded-border);
+}
+
+.collapse-item:focus {
+  outline: none;
+  background-color: var(--unga-focus-color);
+}
+
+.collapse-item:hover {
+  background-color: var(--unga-hover-color);
+}
+
 /*
  * ---------------------------------------------------------------------------------
  * -- Accordion items
@@ -151,6 +174,11 @@
   border-color: var(--unga-border-color);
   border-radius: var(--unga-half-rounded-border);
   flex-grow: 1;
+}
+
+.dropdown-trigger:focus {
+  outline: none;
+  border-color: var(--unga-focus-color);
 }
 
 .dropdown-trigger-title {
