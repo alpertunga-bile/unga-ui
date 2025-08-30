@@ -5,9 +5,19 @@ import { Dropdown } from "./unga-ui/dropdown/dropdown.jsx";
 import AutoComplete from "./unga-ui/autocomplete/autocomplete.jsx";
 import Chip from "./unga-ui/chip/chip.jsx";
 import { JSX } from "react-jsx";
+import TagSelection from "./unga-ui/tag-selection/tag-selection.jsx";
 
 function App() {
-  const auto_options = ["New York", "London", "Honk Kong"];
+  const auto_options = ["New York", "London", "Hong Kong"];
+  const tag_options = [
+    "New York",
+    "Paris",
+    "Hong Kong",
+    "Munih",
+    "Tokyo",
+    "London",
+  ];
+  const prev_tags = ["London", "Paris"];
 
   const components: JSX.element[] = [
     (<Accordion>
@@ -16,6 +26,7 @@ function App() {
     (<Dropdown options={["Option 1", "Option 2"]} />),
     (<AutoComplete form_name="country" options={auto_options} />),
     (<Chip name="Chip" onClick={() => alert("Hello There")} />),
+    (<TagSelection options={tag_options} prev_tags={prev_tags} />),
   ];
 
   return (
