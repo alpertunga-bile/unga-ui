@@ -76,7 +76,7 @@ export default function Accordion(
   };
 
   return (
-    <div className="accordion-root" ref={root}>
+    <div className="collapse-root" ref={root}>
       <div className="accordion-div" onClick={handle_click}>
         <p className="accordion-title">{title}</p>
         <p className="accordion-arrow">{">"}</p>
