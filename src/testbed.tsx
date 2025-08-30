@@ -1,9 +1,13 @@
 import "./main.css";
 import reactLogo from "./assets/react.svg";
-import Accordion from "./nero-ui/accordion/accordion.jsx";
-import { Dropdown } from "./nero-ui/dropdown/dropdown.jsx";
+import Accordion from "./unga-ui/accordion/accordion.jsx";
+import { Dropdown } from "./unga-ui/dropdown/dropdown.jsx";
+import AutoComplete from "./unga-ui/autocomplete/autocomplete.jsx";
+import Chip from "./unga-ui/chip/chip.jsx";
 
 function App() {
+  const auto_options = ["New York", "London", "Honk Kong"];
+
   return (
     <>
       <img src="/vite-deno.svg" alt="Vite with Deno" />
@@ -15,7 +19,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Nero-UI is done with Deno + Vite + React</h1>
+      <h1>Unga-UI is done with Deno + Vite + React</h1>
       <div className="testbed">
         <div className="testbed-item">
           <Accordion>
@@ -26,10 +30,10 @@ function App() {
           <Dropdown options={["Option 1", "Option 2"]} />
         </div>
         <div className="testbed-item">
-          <h1>NeroUI</h1>
+          <AutoComplete form_name="country" options={auto_options} />
         </div>
         <div className="testbed-item">
-          <h1>NeroUI</h1>
+          <Chip name="Temp" onClick={() => alert("Hello There")} />
         </div>
       </div>
     </>

@@ -81,7 +81,7 @@ export default function AutoComplete({ form_name, options }) {
       <input
         className="autocomplete-trigger"
         type="text"
-        placeholder={`Add ${form_name} tags`}
+        placeholder={`Select ${form_name} tags`}
         onInput={handle_input_change}
         onKeyDown={handle_key_press}
         value={userInput}
