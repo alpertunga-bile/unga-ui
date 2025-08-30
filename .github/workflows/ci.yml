@@ -14,7 +14,8 @@ jobs:
 
       -uses: denoland/setup-deno@v2
        with:
-          deno-version: v2.x
+         deno-version: v2.x
 
       -name: Build
+       working-directory: ${{github.workspace}}
        run: deno task build
