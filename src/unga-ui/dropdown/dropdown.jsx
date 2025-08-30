@@ -82,7 +82,7 @@ export function Dropdown(
   return (
     <div className="dropdown-root" ref={root}>
       <input
-        className="dropdown-input"
+        className="hidden-input"
         type="text"
         autoComplete="off"
         name={form_name}

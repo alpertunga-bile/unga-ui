@@ -65,6 +65,15 @@
 
 /*
  * ---------------------------------------------------------------------------------
+ * -- General items
+ */
+
+.hidden-input {
+  display: none;
+}
+
+/*
+ * ---------------------------------------------------------------------------------
  * -- Accordion items
  */
 
@@ -129,10 +138,6 @@
   flex-direction: column;
   flex-wrap: nowrap;
   flex-grow: 1;
-}
-
-.dropdown-input {
-  display: none;
 }
 
 .dropdown-trigger {
@@ -223,6 +228,11 @@
   border-radius: var(--unga-half-rounded-border);
   flex-grow: 1;
   padding: 1rem 1rem;
+}
+
+.autocomplete-trigger:focus {
+  outline: none;
+  border-color: var(--unga-focus-color);
 }
 
 .autocomplete-items {
