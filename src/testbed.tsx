@@ -33,7 +33,7 @@ function App() {
           <AutoComplete form_name="country" options={auto_options} />
         </div>
         <div className="testbed-item">
-          <Chip name="Temp" onClick={() => alert("Hello There")} />
+          <Chip name="Chip" onClick={() => alert("Hello There")} />
         </div>
       </div>
     </>
