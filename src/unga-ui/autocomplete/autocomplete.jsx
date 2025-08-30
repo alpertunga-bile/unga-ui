@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import Trie from "./trie.ts";
+import Trie from "../scripts/trie.ts";
 
 function AutoCompleteItem({ name, key = "autocomplete", onClick, onKeyDown }) {
   return (
     <li
-      className="autocomplete-item"
+      className="collapse-item"
       onClick={onClick}
       onKeyDown={onKeyDown}
       tabIndex={0}
@@ -15,7 +15,9 @@ function AutoCompleteItem({ name, key = "autocomplete", onClick, onKeyDown }) {
   );
 }
 
-export default function AutoComplete({ form_name, options }) {
+export default function AutoComplete(
+  { placeholder = "Select from options", form_name, options, is_input = true },
+) {
   const [userInput, setUserInput] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [trie, setTrie] = useState(new Trie());
@@ -24,6 +26,14 @@ export default function AutoComplete({ form_name, options }) {
     trie.multi_insert(options);
     setTrie(trie);
   }, [options]);
+
+  const handle_on_focus = (e) => {
+    const value = e.currentTarget.value;
+
+    if ("" === value) {
+      setSuggestions(options);
+    }
+  };
 
   const handle_input_change = (e) => {
     const input_value = e.currentTarget.value;
@@ -47,7 +57,7 @@ export default function AutoComplete({ form_name, options }) {
         setUserInput(userInput);
       }
 
-      if (suggestions.length == 1) {
+      if (suggestions.length === 1) {
         setUserInput(suggestions[0]);
         setSuggestions([]);
       }
@@ -64,26 +74,20 @@ export default function AutoComplete({ form_name, options }) {
     if (e.key === "Enter" && userInput.trim() !== "") {
       e.preventDefault();
 
-      if (suggestions.includes(userInput)) {
-        setSuggestions([]);
-        setUserInput(userInput);
-      }
-
-      if (suggestions.length == 1) {
-        setUserInput(suggestions[0]);
-        setSuggestions([]);
-      }
+      setSuggestions([]);
+      setUserInput(e.target.innerText);
     }
   };
 
   return (
-    <div className="autocomplete-root" ref={root}>
+    <div className="collapse-root">
       <input
         className="autocomplete-trigger"
         type="text"
-        placeholder={`Select ${form_name} tags`}
+        placeholder={placeholder}
         onInput={handle_input_change}
         onKeyDown={handle_key_press}
+        onFocus={handle_on_focus}
         value={userInput}
       />
       <ul
